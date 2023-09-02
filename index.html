@@ -1,0 +1,419 @@
+<!doctype html>
+<html class="no-js" lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<title>Win55 đăng ký miễn phí nhận 55K,có thể rút tiền</title>
+<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=yes">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/uaredirect.js"></script>
+<script type="text/javascript">uaredirect("wap/index.html");</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+// $(function(){
+// 	function scroll() {
+//         var height = $('#dem1 li').height();
+//         setInterval(function() {
+//             if ($('#dem1').height() > $('#dem').height()) {
+//                 $('#dem1').animate({ marginTop: -height + 'px' }, 1000, function() {
+//                     var p = $(this).css({ marginTop: '0px' }).find('li').eq(0).remove().clone();
+//                     $(this).append(p);
+//                 })
+//             }
+//         }, 6000)
+//     }
+// 	scroll();
+</script>
+	<style>
+		.el-input.is-disabled .el-input__inner {
+			color: #086a4a;!important;
+		}
+
+	</style>
+</head>
+<body>
+<div id="app">
+	<div id="container">
+		<div class="header">
+			<div class="hInner clearfix">
+				<div class="logo"><a href="index.html" target="_blank"><img src="images/logo.png" alt=""></a></div>
+				<!-- <div class="img"><img src="images/h_img01.png" alt=""></div> -->
+				<div class="service"><a :href="kefu_url" target="_blank"><img src="images/h_img02.png" alt=""></a></div>
+			</div>
+		</div>
+		<div class="main">
+			<a @click="showEvents = true"><div id="dem" class="news">
+				<ul id="dem1">
+					<li>Nhấp vào nút " Thông tin khuyến mãi " để nhận tin tức mới nhất</li>
+				</ul>
+			</div></a>
+			<div class="img"><a :href="site_url" target="_blank"><img src="images/bg01.jpg" alt="" width="1000px" height="600px"></a></div>
+			<ul class="linkUl clearfix">
+				<li class="btn"><a @click="showRegisterLink = true">Đăng Ký</a></li>
+				<li class="btn"><a  @click="dialogVisible = true">Nhận Thưởng</a></li>
+				<li class="btn1"><a @click="showEvents = true">Thông tin khuyến mãi</a></li>
+				<!--<li class="btn"><a @click="showRule = true">Quy tắc tiền quà tặng</a></li>-->
+				<!--<li><a :href="site_url">Sảnh khuyến mãi</a></li>-->
+			</ul>
+			<table>
+				<col width="25%">
+				<col width="25%">
+				<col width="25%">
+				<col width="25%">
+				<thead>
+				<tr>
+					<th colspan="6"><a :href="site_url" target="_blank"><img src="images/img02.png"></a></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th>Số tiền gửi</th>
+					<th>Số tiền thưởng</th>
+					<th>Giới hạn tiền thưởng</th>
+					<th>Cách đăng ký</th>
+				</tr>
+				<tr>
+					<td>50K</td>
+					<td>55K</td>
+
+					<td class="style" rowspan="14"> Nổ hũ<br>Bắn Cá <br>Game bài<br>
+						Quà tặng không giới hạn</td>
+					<td rowspan="14"><a :href="site_url" target="_blank">Nhấp để áp dụng</a></td>
+				</tr>
+				<tr>
+					<td>100K</td>
+					<td>85K</td>
+
+				</tr>
+				<tr>
+					<td>200K</td>
+					<td>155K</td>
+
+				</tr>
+				<tr>
+					<td>500K</td>
+					<td>225K</td>
+
+				</tr>
+				<tr>
+					<td>1000K</td>
+					<td>255K</td>
+
+				</tr>
+				<tr>
+					<td>5000K</td>
+					<td>455K</td>
+
+				</tr>
+				<tr>
+					<td>10000K</td>
+					<td>555K</td>
+
+				</tr>
+				<tr>
+					<td>50000K</td>
+					<td>1555K</td>
+
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="footer">
+			<!-- <div class="img"><img src="images/f_img.png" alt="" width="100%" height="100%"></div> -->
+			<p>Copyright © Win55 Reserved</p>
+		</div>
+	</div>
+	<div class="cover"  ></div>
+
+	<div class="pop pop01" v-if="showRegisterLink">
+		<div class="close"><a @click="showRegisterLink = false"><img src="images/close.png" alt=""></a></div>
+		<ul class="clearfix">
+			<li v-for="(link,index) in registerLinks" :key="index"><a :href="link" target="_blank">liên kết đăng ký{{index+1}}</a></li>
+		</ul>
+	</div>
+
+
+	<div class="pop pop02" v-if="showEvents">
+		<div class="close"><a @click="showEvents = false"><img src="images/close.png" alt=""></a></div>
+		<div class="events">
+			<h1 class="eventstittle">TÀI KHOẢN CHÍNH THỨC</h1>
+		<p class="eventstext">Theo dõi tài khoản chính thức của Win55 để biết được tất cả các hoạt động ưu đãi để nhận được những phần quà và tiền thưởng tuyệt vời!</p>
+		<div class="eventsimg">
+			<a href="https://t.me/win55com" target="_blank" class="a1">Telegram<br><img src="images/TG.png" alt="" class="img1"></a>
+			<a href="https://www.facebook.com/Win55com/ target="_blank" class="a1">Facebook<br><img src="images/FB.png" alt="" class="img1"></a>
+		</div>
+		</div>
+	</div>
+
+	<div class="pop pop02" v-if="showStep">
+		<div class="close"><a @click="showStep = false"><img src="images/close.png" alt=""></a></div>
+		<p class="title"><span class="tel" @click="copy(phone1)">{{phone1}}</span> <span class="copy" @click="copy(phone1)">(nhấp để sao chép)</span><br>
+			<span class="tel" @click="copy(phone2)">{{phone2}}</span> <span class="copy" @click="copy(phone2)">(nhấp để sao chép)</span></p>
+		<dl>
+			<dt>các bước ứng dụng：</dt>
+			<dd>1、Vui lòng đăng ký tài khoản thành viên miễn phí trước rồi gửi tin nhắn để đăng ký, nếu không bạn sẽ không thể đăng ký！<a href="#" target="_blank">đăng ký ngay bây giờ>>></a><br>
+				2、Sau khi đăng ký thành công, vui lòng gửi số tài khoản thành viên của bạn đến {{phone1}}、{{phone2}}（Chỉ gửi một trong số họ, không gửi nhiều lần）gợi ý quan trọng：<span>Không thêm các ký tự khác, kể cả tiếng Trung hoặc dấu chấm câu, nếu không hệ thống không thể thêm</span></dd>
+			<dd class="clearfix">
+				<div class="linfo">
+					<p>Ví dụ đúng: Nếu tài khoản đăng ký là "*********" thì soạn nội dung SMS là "*********" và gửi về<span>{{phone1}}</span><br>
+						biểu tượng chính xác： </p>
+					<img src="images/correct.jpg" alt="">
+				</div>
+				<div class="rinfo">
+					<p>Ví dụ lỗi: Nếu tài khoản đăng ký là "*******" thì sửa nội dung tin nhắn thành "Tài khoản thành viên của tôi: *****" hoặc "Tài khoản: *****" và các định dạng đều được sai và tiền thắng cược không thể nhận được.<br>
+						biểu tượng lỗi： </p>
+					<img src="images/error.jpg" alt="">
+				</div>
+			</dd>
+
+			<dd>3、Hệ thống sẽ tự động thêm tin nhắn sau khi gửi. Do hoạt động sôi nổi nên kênh có thể bị nghẽn, nếu sau 30 phút mà vẫn chưa gửi được, vui lòng liên hệ bộ phận chăm sóc khách hàng trực tuyến kịp thời để được tư vấn và xử lý.<br>
+				4、Mọi thắc mắc vui lòng liên hệ 24h <a :href="kefu_url" target="_blank">dịch vụ trực tuyến>>></a>!</dd>
+		</dl>
+	</div>
+	<div class="pop pop03" v-if="showRule">
+		<div class="close"><a @click="showRule = false"><img src="images/close.png" alt=""></a></div>
+		<p class="ttl">Quy tắc tiền thưởng 55K VIỆT NAM ĐỒNG </p>
+		<table>
+			<tbody>
+			<tr>
+				<th>số tiền thưởng</th>
+				<th>dòng chảy hoàn chỉnh</th>
+				<th>hạn chế trò chơi</th>
+				<th>số tiền rút</th>
+			</tr>
+			<tr>
+				<td>55K</td>
+				<td>1 lần</td>
+				<td>vô hạn</td>
+				<td>vô hạn</td>
+			</tr>
+			</tbody>
+		</table>
+		<dl>
+			<dt>Chi tiết hoạt động</dt>
+			<dd>1.Để đảm bảo rằng thông tin đăng ký thành viên phải đúng và hợp lệ, tên thật đã đăng ký phải phù hợp với tên tài khoản ngân hàng bị ràng buộc trước khi có thể rút tiền và không thể sửa đổi sau khi đăng ký. Nếu dữ liệu bị sửa đổi, tiền thưởng và tất cả lợi nhuận tạo ra trong kỳ sẽ bị khấu trừ.<br>
+				2.Sau khi các thành viên nhận được chip tiền mặt 55K VIỆT NAM ĐỒNG , họ có thể rút tiền sau khi hoàn thành 1 lần doanh thu và không có thời gian rút tiền cũng như hạn chế trò chơi đối với phần thưởng.<br>
+				3.Khi tham gia ưu đãi này, bạn đồng ý với Điều khoản và Điều kiện của Ưu đãi.</dd>
+			<dt>Hoạt động Đột kích</dt>
+			<dd>1.Để đảm bảo tính xác thực của thông tin người dùng thành viên, sau khi thông tin đăng ký được ràng buộc, nó không thể được sửa đổi trước lần rút tiền đầu tiên, vui lòng lưu ý.<br>
+				2.Do số lượng thành viên đông nên sau khi bạn gửi tin nhắn hệ thống sẽ cộng lần lượt từng tài khoản thành viên nên không thể cộng cùng lúc, mong bạn kiên nhẫn chờ đợi. Xin lỗi vì sự bất tiện này!</dd>
+		</dl>
+	</div>
+	<div class="wraps">
+		<div class="tipsBox1" v-if="dialogVisible" style="z-index:99999; top:130px;display: block">
+			<form id="form_mobile">
+				<ul>
+					<li>
+                    <span>
+                        Số điện thoại：
+                    </span>
+						<input type="text" v-model="form.mobile"  placeholder="Hãy nhập SĐT bắt đầu bằng '0'"  id="email"  name="mobile"/>
+					</li>
+					<li>
+                    <span>
+                        Tài khoản：
+                    </span>
+						<input type="text" v-model="form.username"  placeholder="không đăng ký không thể nhận" name="username"/>
+					</li>
+					<li>
+                    <span>
+                        Số tiền thưởng：
+                    </span>
+						<input type="text"  value="55K VIỆT NAM ĐỒNG " class="money" placeholder="Vui lòng nhập số tiền tín dụng" readonly/>
+					</li>
+
+					<li style="width: 397px;">
+                    <span>
+                        Mã xác nhận：
+                    </span>
+						<input style="width:160px"  v-model="form.catcph"  name="code" class="w110"  type="text"  placeholder="Vui lòng nhập mã xác minh hình ảnh" />
+						<a class="label" @click="refresh" style="height:34px">
+							<img :src="src">
+						</a>
+					</li>
+
+					<li style="width: 450px;">
+                    <span>
+                        Mã OTP：
+                    </span>
+						<input style="width:160px"  v-model="form.code"  name="code" class="w110"  type="text"  placeholder="Vui lòng nhập mã xác minh điện thoại" />
+						<a class="label" style=" cursor: pointer; width: 150px; height: 32px; line-height: 32px; border: 1px solid #fff; display: inline-block; text-align: center; margin-left: 2px; margin-top: 1px;"  id="second" @click="send">{{codeText}}</a>
+					</li>
+				</ul>
+				<div class="btnSend" @click="apply" >
+					Xác nhận ngay bây giờ
+				</div>
+			</form>
+			<div class="conBox">
+				<h2>Các bước để nhận tiền thưởng 55K VIỆT NAM ĐỒNG </h2>
+				<p>1、Vui lòng đăng ký tài khoản thành viên trước！ không đăng ký tài khoản trước , không thể nhận 55K</p>
+				<p>2、Quay lại trang này, nhập số điện thoại di động/Tên tài khoản/mã xác minh điện thoại di động của bạn và gửi để nhận bộ sưu tập tự phục vụ 55K VIỆT NAM ĐỒNG ！</p>
+				<p>3、Đăng nhâp thành công, hệ thống sẽ tự động nạp tiền vào tài khoản của bạn sau 5 phút, Hãy đăng nhập tài khoản trên trang wed chính thức để chơi game, chỉ cần hoàn thành 1 vòng cược , là có thể rút tiền ngay</p>
+				<p style="color: red;">
+					4.Chú ý:Hoạt động chỉ giới hạn trong Game Nổ hũ, Bắn Cá và Game Bài. Trò chơi có thể loại như : 【Baccarat, Xóc Đĩa, Đại Chiến Đỏ Đen, Tài Xỉu,Rồng và Hổ chiến đấu,Tài xỉu】 không tham gia ưu đãi này, nếu không sẽ trừ lợi nhuận và tiền thắng từ lợi nhuận này.
+				</p>
+			</div>
+			<div class="close" @click="dialogVisible=false"></div>
+		</div>
+	</div>
+
+
+
+	<div class="wraps">
+		<div class="tipsBox1" v-if="dialogNotice" style="z-index:99999; top:130px;display: block">
+			<p style="text-align: center;margin-top: 20px;">{{notice_text}}</p>
+			<div class="close" @click="dialogNotice=false"></div>
+		</div>
+	</div>
+</div>
+
+</body>
+<script src="config.js"></script>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			baseApi:api,
+			showRegisterLink:false,
+			showRule:false,
+			showStep:false,
+			dialogVisible:false,
+			showEvents:false,
+			form: {
+				mobile: '',
+				username: '',
+				code: '',
+				amount: '88',
+				catcph:''
+			},
+			src:this.baseApi+'/api/getCaptcha2?time='+new Date().getTime(),
+			codeText:'Gửi mã xác minh',
+			codeTime:null,
+			btnDisabled:false,
+			formLabelWidth: '120px',
+			registerLinks:config_registerLinks,//注册链接
+			phone1:config_phone1,//手机号码1
+			phone2:config_phone2,//手机号码2
+			kefu_url:config_kefu_url,//客服地址
+			site_url:config_site_url,//站点跳转地址
+			notice_text:"",
+			dialogNotice:false
+		},
+		mounted(){
+			this.refresh()
+		},
+		methods:{
+			copy(val){
+				// 创建输入框
+				var textarea = document.createElement('textarea');
+				document.body.appendChild(textarea);
+				// 隐藏此输入框
+				textarea.style.position = 'absolute';
+				textarea.style.clip = 'rect(0 0 0 0)';
+				// 赋值
+				textarea.value = val;
+				// 选中
+				textarea.select();
+				// 复制
+				document.execCommand('copy', true);
+				alert('sao chép thành công')
+			},
+			handleClose(done) {
+				this.$confirm('xác nhận đóng？')
+						.then(_ => {
+							done();
+						})
+						.catch(_ => {});
+			},
+			send(){
+				console.log('Gửi mã xác minh điện thoại di động')
+				var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(16[0-9]{1})|(17[0-9]{1})|(19[0-9]{1}))+\d{8})$/;
+				if(this.form.mobile ===''){
+					this.$message.error('Hãy nhập SĐT bắt đầu bằng "0"！');
+					return false;
+				}
+				let time = 60;
+				this.btnDisabled = true
+
+
+				axios.get(this.baseApi+'/api/send?mobile='+this.form.mobile+'&catcph='+this.form.catcph)
+				.then( (response)=> {
+					console.log(response);
+					if(response.data.code === 200){
+						this.codeTime =  setInterval( ()=> {
+							time--;
+							if(time > 0){
+								this.codeText = "("+time +'s'+")"
+							}else{
+								this.codeText = "gửi lại"
+								this.btnDisabled = false
+								clearInterval(this.codeTime)
+							}
+						},1000)
+						this.$message.success(response.data.message);
+					}else{
+						this.codeText = "gửi lại"
+						this.btnDisabled = false
+						clearInterval(this.codeTime)
+						if(response.data.code ===502){
+							this.notice_text = response.data.message
+							this.dialogNotice = true
+						}else{
+							this.$message.error(response.data.message);
+						}
+
+					}
+				})
+				.catch( (error)=> {
+					console.log(error);
+					this.codeText = "gửi lại"
+					this.btnDisabled = false
+					clearInterval(this.codeTime)
+					this.$message.error('dịch vụ bất thường！');
+				});
+			},
+			refresh(){
+				this.src = this.baseApi+'/api/getCaptcha2?time='+new Date().getTime();
+			},
+			apply(){
+				if(this.form.code ===''){
+					this.$message.error('vui lòng nhập mã xác nhận！');
+					return false;
+				}
+				if(this.form.username ===''){
+					this.$message.error('Vui lòng nhập tên người dùng！');
+					return false;
+				}
+				axios.get(this.baseApi+'/api/apply?mobile='+this.form.mobile+"&username="+this.form.username+"&code="+this.form.code+'&catcph='+this.form.catcph)
+						.then( (response)=> {
+							if(response.data.code === 200){
+								this.$message.success(response.data.message);
+							}else{
+								if(response.data.code ===502){
+									this.notice_text = response.data.message
+									this.dialogNotice = true
+								}else{
+									this.$message.error(response.data.message);
+								}
+							}
+						})
+						.catch( (error)=> {
+							console.log(error);
+							this.$message.error("dịch vụ bất thường");
+						});
+			}
+		}
+	})
+</script>
+
+</html>
